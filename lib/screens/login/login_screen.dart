@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_app/services/rest_api.dart';
@@ -349,6 +350,8 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   void _login() async {
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+
     setState(() {
       _isLoading = true;
     });
@@ -368,6 +371,9 @@ class _LoginScreenState extends State<LoginScreen> {
         _isLoading = false;
       });
       showAlertDialog(context, "Login Success");
+      sharedPreferences.setString('storeName', body['data']['name']);
+      sharedPreferences.setString('storeEmail', body['data']['email']);
+      Navigator.pushNamed(context, '/dashboard');
     } else {
       // print('Login Fail');
       setState(() {

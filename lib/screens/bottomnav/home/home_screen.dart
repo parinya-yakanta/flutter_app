@@ -10,14 +10,14 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
 
  var pages = [
-  '/login',
-  '/media_layout',
-  '/media_query',
-  '/media_query',
-  '/media_query',
-  '/media_query',
-  '/media_query',
-  '/media_query'
+  '/about',
+  '/about',
+  '/about',
+  '/contact',
+  '/term',
+  '/term',
+  '/term',
+  '/term'
  ];
 
 
@@ -86,7 +86,8 @@ class _HomeScreenState extends State<HomeScreen> {
                               fontSize: 18,
                               fontFamily: "Montserrat",
                               color: Colors.white,
-                              fontWeight: FontWeight.w600),
+                              fontWeight: FontWeight.w600,
+                              ),
                           textAlign: TextAlign.center,
                         ),
                       )
